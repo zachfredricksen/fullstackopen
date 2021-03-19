@@ -1,0 +1,20 @@
+title: Exercise 0.6: New note
+
+note over browser:
+user enters text in text field
+end note
+note over browser:
+user clicks form submit button with text "Save"
+end note
+note over browser:
+form submits with request payload message=text
+end note
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa?message=text
+note over server:
+the text is appended to the data.json and the oldest note is removed
+end note
+note over browser:
+js-code function redrawNotes() executes and removes the top message and appends
+the new message to the bottom
+no page reload occurs
+end note
